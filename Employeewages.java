@@ -2,13 +2,13 @@ package com.bridgelab.employeewage;
 
 import java.util.Scanner;
 
-/* UC1 Employee present or absent*/
+/* /* UC2 Employee daily wages full time hours is 8 hours/day */
 public class Employeewages {
 	public static void dailywages() {
 		Scanner hours = new Scanner(System.in);
-		int workedhours = hours.nextInt();
-		System.out.println("number of hours worked :" + workedhours);
 
+		System.out.println(" number of hours worked :");
+		int workedhours = hours.nextInt();
 		int fulltimehours = 8;
 		if (workedhours == fulltimehours) {
 			System.out.println("present ");
@@ -17,7 +17,35 @@ public class Employeewages {
 			int wage = 20;
 			int fulltimewage = wage * 1 * workedhours;
 			System.out.println("wages of employee per day: " + fulltimewage);
+		} else {
+			System.out.println("invalid hours for fulltime it should be 8 hours ");
 		}
+	}
+
+	/* UC3 Employee part-time wages part time hours for day is 4 hours */
+	public static void Parttimewages() {
+		int Parttimehours = 4;
+		Scanner hours = new Scanner(System.in);
+
+		System.out.println("number of hours worked :" + workedhours);
+		int workedhours = hours.nextInt();
+		if (workedhours == Parttimehours) {
+			System.out.println("present ");
+			System.out.println("wage for one hour=20rs ");
+			System.out.println("parttime hours=4 hours/day");
+			int wage = 20;
+			int parttimewage = wage * 1 * workedhours;
+			System.out.println("wages of employee per day: " + parttimewage);
+		}
+	}
+
+	public static void monthlywages() {
+		int wage = 20;
+		int monthdays = 20;
+		int fulltimehours = 8;
+
+		int monthlywages = wage * fulltimehours * monthdays;
+		System.out.println("wages of employee per month: " + monthlywages);
 	}
 
 	public static void main(String[] args) {
@@ -35,12 +63,17 @@ public class Employeewages {
 				Employeewages.dailywages();
 
 				break;
+
+			case 2:
+				System.out.println("option 2: parttime wages");
+				Employeewages.Parttimewages();
+				break;
+			case 3:
+				System.out.println("option 3: monthly wages");
+				Employeepresentabsent.monthlywages();
+				break;
 			/*
-			 * case 2: System.out.println("option 2: parttime wages");
-			 * Employeepresentabsent.Parttimewages(); break; case 3:
-			 * System.out.println("option 3: monthly wages");
-			 * Employeepresentabsent.monthlywages(); break; case 4:
-			 * System.out.println("option 4: monthlyhourly wages");
+			 * case 4: System.out.println("option 4: monthlyhourly wages");
 			 * Employeepresentabsent.monthlyhourwages();
 			 */
 			default:
